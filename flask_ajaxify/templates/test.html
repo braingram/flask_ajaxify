@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<title>AJAX test</title>
-    <script src="{{url_for('ajax.static', filename='js/jquery-1.8.3.min.js')}}"></script>
-    <script src="{{url_for('ajax.static', filename='js/jquery.json-2.4.min.js')}}"></script>
+    <script src="{{url_for('ajax.static', filename='js/jquery.js')}}"></script>
+    <script src="{{url_for('ajax.static', filename='js/jquery.json.js')}}"></script>
     <script src="{{url_for('ajax.static', filename='js/ajaxify.js')}}"></script>
     <script type="text/javascript">
         $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
