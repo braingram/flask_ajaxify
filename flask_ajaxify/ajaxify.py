@@ -87,7 +87,6 @@ def make_blueprint(obj, register=True, app=None):
             s = 1
             e = 'PY: %s' % E
             r = ''
-        print r, e, s
         return flask.jsonify(status=s, result=json.dumps(r), error=e)
 
     @ajax.route('/test')
