@@ -1,5 +1,5 @@
 var Ajaxify = function() {
-    this.url =  undefined;  // default url
+    this.url = '/ajax';  // default url
     this.datum = {};  // last received datum
     this.request = {};  // last sent request
     this.send = function (options) {
@@ -50,8 +50,8 @@ var Ajaxify = function() {
             attr = options.attr || '';
             args = options.args || '[]';
             kwargs = options.kwargs || '{}';
-            if (options.url === undefined) {
-                if (this.url === undefined) {
+            if (!options.url) {
+                if (!this.url) {
                     throw 'url was undefined';
                 } else {
                     url = this.url;
