@@ -1,5 +1,5 @@
 var Ajaxify = function() {
-    this.url = '/ajax';  // default url
+    this.url = '/ajaxify';  // default url
     this.datum = {};  // last received datum
     this.request = {};  // last sent request
     this.send = function (options) {

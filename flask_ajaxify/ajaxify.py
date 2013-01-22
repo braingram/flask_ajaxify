@@ -69,7 +69,7 @@ def process_request(data, obj):
 
 
 def make_blueprint(obj, register=True, app=None):
-    name = 'ajax'  # only works for 1 name now
+    name = 'ajaxify'  # only works for 1 name now
     main_dir = os.path.dirname(os.path.abspath(__file__))
     template_folder = os.path.join(main_dir, 'templates')
     static_folder = os.path.join(main_dir, 'static')
@@ -91,7 +91,7 @@ def make_blueprint(obj, register=True, app=None):
 
     @ajax.route('/test')
     def main():
-        return flask.render_template('test.html')
+        return flask.render_template('ajaxify_test.html')
 
     if register:
         if app is None:

@@ -3,9 +3,9 @@
 <head>
 	<meta charset="utf-8">
 	<title>AJAX test</title>
-    <script src="{{url_for('ajax.static', filename='js/jquery.js')}}"></script>
-    <script src="{{url_for('ajax.static', filename='js/jquery.json.js')}}"></script>
-    <script src="{{url_for('ajax.static', filename='js/ajaxify.js')}}"></script>
+    <script src="{{url_for('ajaxify.static', filename='js/jquery.js')}}"></script>
+    <script src="{{url_for('ajaxify.static', filename='js/jquery.json.js')}}"></script>
+    <script src="{{url_for('ajaxify.static', filename='js/ajaxify.js')}}"></script>
     <script type="text/javascript">
         $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
     </script>
@@ -46,7 +46,7 @@
 <body>
     <p>
     <label for="url">AjaxURL</label>
-    <input type="text" id="url" value="/ajax" />
+    <input type="text" id="url" value="/ajaxify" />
     <label for="function">function</label>
     <input type="text" id="function" value='foo' />
     <label for="attribute">attribute</label>
