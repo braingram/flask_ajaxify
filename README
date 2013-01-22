@@ -1,0 +1,15 @@
+An example of a flask blueprint that exports a python object
+to be ajax accessible
+
+import flask_ajaxify
+flask_ajaxify.test()
+
+open web browser and go to 127.0.0.1:5000/ajax/test
+
+import flask
+import flask_ajaxify
+
+some_object = Foo()
+app = flask.Flask(__name__)
+flask_ajaxify.make_blueprint(some_object, app=app, register=True)
+app.run()
