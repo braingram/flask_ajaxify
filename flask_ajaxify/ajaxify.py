@@ -68,7 +68,7 @@ def process_request(data, obj):
     return f(*args, **kwargs)
 
 
-def make_blueprint(obj, register=True, app=None):
+def make_blueprint(obj, register=True, app=None, json_dumps_kwargs=None):
     name = 'ajaxify'  # only works for 1 name now
     main_dir = os.path.dirname(os.path.abspath(__file__))
     template_folder = os.path.join(main_dir, 'templates')
@@ -76,6 +76,7 @@ def make_blueprint(obj, register=True, app=None):
 
     ajax = flask.Blueprint(name, name, \
             template_folder=template_folder, static_folder=static_folder)
+    json_dumps_kwargs = {} if json_dumps_kwargs is None else json_dumps_kwargs
 
     @ajax.route('/')
     def request():
@@ -87,7 +88,8 @@ def make_blueprint(obj, register=True, app=None):
             s = 1
             e = 'PY: %s' % E
             r = ''
-        return flask.jsonify(status=s, result=json.dumps(r), error=e)
+        return flask.jsonify(status=s, \
+                result=json.dumps(r, **json_dumps_kwargs), error=e)
 
     @ajax.route('/test')
     def main():
